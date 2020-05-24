@@ -7,38 +7,52 @@
 	</head>
 	<body>
 		<form name="form">
-		<input class="textview" name="textview">
+		<input class="textview" id="textview" >
+        <input type="button" class="cross" value="e/π" onclick="display();">
 		</form>
 		<table>
+			
+			<tr id="hidden0" style="display: none;">
+				<td><input type="button" class="button" id="gr" value="sin" onclick="Sine();"></td>
+				<td><input type="button" class="button" id="gr" value="cos" onclick="Cosine();"></td>
+				<td><input type="button" class="button" id="gr" value="tan" onclick="Tangent();"></td>
+				<td><input type="button" class="button" id="gr" value="exp" onclick="Exp();"></td>
+				<td><input type="button" class="button" id="gr" value="ln" onclick="LN();"></td>
+			</tr>
 			<tr>
 				<td><input type="button" class="button" id="C" value="C" onclick="empty();"></td>
-				<td><input type="button" class="button" id="gr" value="()"></td>
-				<td><input type="button" class="button" id="gr" value="%" onclick="insert('%');"></td>
+				<td><input type="button" class="button" id="gr" value="DEL" onclick="back();"></td>
+                <td><input type="button" class="button" id="gr" value="()" onclick="bracket();"></td>
 				<td><input type="button" class="button" id="gr" value="÷"></td>
+				<td  style="display: none;" id="hidden1"><input type="button" class="button" id="gr" onclick="Log();" value="log" ></td>
 			</tr>
 			<tr>
 				<td><input type="button" class="button" value="7" onclick="insert(7);"></td>
 				<td><input type="button" class="button" value="8" onclick="insert(8);"></td>
 				<td><input type="button" class="button" value="9" onclick="insert(9);"></td>
 				<td><input type="button" class="button" value="X" id="gr" onclick="insert('*');"></td>
+				<td  style="display: none;" id="hidden2"><input type="button" class="button" id="gr" value="x!" onclick="fact();"></td>
 			</tr>
 			<tr>
 				<td><input type="button" class="button" value="4" onclick="insert(4);"></td>
 				<td><input type="button" class="button" value="5" onclick="insert(5);"></td>
 				<td><input type="button" class="button" value="6" onclick="insert(6);"></td>
 				<td><input type="button" class="button" id="gr" value="-" onclick="insert('-');"></td>
+				<td  style="display: none;" id="hidden3"><input type="button" class="button" id="gr" value="x^2" onclick="Double();"></td>
 			</tr>
 			<tr>
 				<td><input type="button" class="button" value="1" onclick="insert(1);"></td>
 				<td><input type="button" class="button" value="2" onclick="insert(2);"></td>
 				<td><input type="button" class="button" value="3" onclick="insert(3);"></td>
 				<td><input type="button" class="button" value="+" id="gr" onclick="insert('+');"></td>
+				<td  style="display: none;" id="hidden4"><input type="button" class="button" id="gr" value="√x" onclick="SQRT();"></td>
 			</tr>
 			<tr>
 				<td><input type="button" class="button" value="+/-" onclick="negative();"></td>
 				<td><input type="button" class="button" value="0" onclick="insert(0);"></td>
 				<td><input type="button" class="button" value="." onclick="insert('.');"></td>
 				<td><input type="button" class="button" id="equal" value="=" onclick="equal();"></td>
+				<td  style="display: none;" id="hidden5"><input type="button" class="button" id="gr" value="π" onclick="insert(Math.PI);" ></td>
 			</tr>
 		</table>
 	</body>
