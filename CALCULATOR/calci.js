@@ -48,7 +48,7 @@ document.form.textview.value=eval(exp)*eval(exp);
 }
 function Sine(){
     var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.sin(eval(exp));
+    if(exp){    document.form.textview.value=Math.sin(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
         document.form.textview.value='Math.sin(';
@@ -56,7 +56,7 @@ function Sine(){
 }
 function Cosine(){
     var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.cos(eval(exp));
+    if(exp){    document.form.textview.value=Math.cos(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
         document.form.textview.value='Math.cos(';
@@ -64,7 +64,7 @@ function Cosine(){
 }
 function Tangent(){
      var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.tan(eval(exp));
+    if(exp){    document.form.textview.value=Math.tan(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
         document.form.textview.value='Math.tan(';
@@ -72,7 +72,7 @@ function Tangent(){
 }
 function Exp(){
      var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.exp(eval(exp));
+    if(exp){    document.form.textview.value=Math.exp(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
         document.form.textview.value='Math.exp(';
@@ -81,7 +81,7 @@ function Exp(){
 
 function Log(){
      var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.log10(eval(exp));
+    if(exp){    document.form.textview.value=Math.log10(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
         document.form.textview.value='Math.log10(';
@@ -99,7 +99,7 @@ function fact(){
 }
 function LN(){
     var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.log10(eval(exp));
+    if(exp){    document.form.textview.value=Math.log10(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
     document.form.textview.value+='Math.log(';
@@ -107,7 +107,7 @@ function LN(){
 }
 function SQRT(){
     var exp=document.form.textview.value;
-    if(exp){    document.form.textview.value=Math.sqrt(eval(exp));
+    if(exp){    document.form.textview.value=Math.sqrt(eval(exp)).toFixed(2);
     }//if value is given earlier
     else{
     document.form.textview.value+='Math.sqrt(';
