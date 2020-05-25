@@ -15,7 +15,7 @@ var a=0,b=0;
                         b++;
             }
            if(exp){
-           document.form.textview.value=eval(exp);
+           document.form.textview.value=eval(exp).toFixed(2);
            }
 }
 function negative(){
