@@ -16,3 +16,11 @@ var final_date =new Date("Jan 1, 2021 00:00:00").getTime();
     if(seconds<10) document.getElementById("seconds").innerHTML='0'+seconds;
     else   document.getElementById("seconds").innerHTML=seconds;
     },1000);
+function hide(){
+    //document.getElementById('input').style.display="none";
+    if(document.getElementById('email').value==""){  document.getElementById('alert').style.display="block";
+    }
+    else{
+     document.getElementById('alert').style.display="none"; document.getElementById('input').innerHTML="You have been enrolled";
+    }
+}
