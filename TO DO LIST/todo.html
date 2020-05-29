@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="todo.js"></script>
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="todo">
+            <div class="head">To Do List</div>
+            <div class="ul">
+                <li>Buy Vegeables</li>
+                <li>Do Coding</li>
+                <li>Make a Project</li>
+                <li>Watch new web series</li>
+                <li>Visit to our farms</li>
+            </div>
+            <input type="text" placeholder="Go To Gym">
+            <br>
+            <input type="button" value="+" onclick="appear();">
+        </div>
+    </div>
+    <script>
+        var arr = document.getElementsByTagName("li");
+        for (var i = 0; i < arr.length; i++) {
+            var span = document.createElement('span');
+            var txt = document.createTextNode('X');
+            span.className = "close";
+            span.appendChild(txt);
+            arr[i].appendChild(span);
+        }
+        //alert(arr.length);
+
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+    </script>
+</body>
+
+</html>
