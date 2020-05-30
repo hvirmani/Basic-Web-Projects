@@ -14,10 +14,8 @@ for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
         var div = this.parentElement;
         var complete = document.createElement('done');
-        var done_value = div.firstChild.nodeValue;
-        var txt = document.createTextNode(done_value);
-        complete.appendChild(txt);
-        document.getElementById('completed').appendChild(complete);
+        var txt = div.firstChild;
+        complete.appendChild(txt); document.getElementById('completed').appendChild(complete);
         div.style.display = "none";
     }
 }
