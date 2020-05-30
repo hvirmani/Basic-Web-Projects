@@ -11,18 +11,22 @@
     <div class="main">
         <div class="todo">
             <div class="head">To Do List</div>
-            <div class="ul">
-                <li>Buy Vegeables</li>
-                <li>Do Coding</li>
-                <li>Make a Project</li>
-                <li>Watch new web series</li>
-                <li>Visit to our farms</li>
-            </div>
-            <input type="text" placeholder="Go To Gym">
-            <br>
+            <input id="ip" type="text" placeholder="Go To Gym" style="display: none;">
+            <ul id="active">
+                <li class="active">Buy Vegeables</li>
+                <li class="active">Do Coding</li>
+                <li class="active">Make a Project</li>
+                <li class="active">Watch new web series</li>
+                <li class="active">Visit to our farms</li>
+            </ul>
+            <ul id="completed" style="display: none;">
+                <li class="completed">Do Exercise</li>
+            </ul>
             <input type="button" value="+" onclick="appear();">
+            <span onclick="see()" class="addBtn">Add</span>
         </div>
     </div>
+
     <script src="todo.js"></script>
 </body>
 
