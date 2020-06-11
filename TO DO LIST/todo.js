@@ -15,7 +15,8 @@ for (i = 0; i < close.length; i++) {
         var div = this.parentElement;
         var complete = document.createElement('done');
         var txt = div.firstChild;
-        complete.appendChild(txt); document.getElementById('completed').appendChild(complete);
+        complete.appendChild(txt);
+        document.getElementById('completed').appendChild(complete);
         div.style.display = "none";
     }
 }
@@ -27,18 +28,19 @@ function appear() {
         newElement();
     }
 }
-function see(){
-    if(document.getElementById('active').style.display==="none"){
-        document.getElementById('active').style.display="block";
-        document.getElementById('completed').style.display="none"
-    }
-    else{
+
+function see() {
+    if (document.getElementById('active').style.display === "none") {
+        document.getElementById('active').style.display = "block";
+        document.getElementById('completed').style.display = "none"
+    } else {
         {
-        document.getElementById('active').style.display="none";
-        document.getElementById('completed').style.display="block"
-    }
+            document.getElementById('active').style.display = "none";
+            document.getElementById('completed').style.display = "block"
+        }
     }
 }
+
 function newElement() {
     var element = document.createElement('li');
     var value = document.getElementById('ip').value;
@@ -60,10 +62,8 @@ function newElement() {
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function () {
             var div = this.parentElement;
-            var div = this.parentElement;
             var complete = document.createElement('done');
-            var done_value = div.firstChild.nodeValue;
-            var txt = document.createTextNode(done_value);
+            var txt = div.firstChild;
             complete.appendChild(txt);
             document.getElementById('completed').appendChild(complete);
             div.style.display = "none";
