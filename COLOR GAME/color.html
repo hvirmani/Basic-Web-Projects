@@ -1,68 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Color</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--<script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                var y;
-                for (var i = 1; i < 8; i++) {
-                    var x = ($("#" + i).attr("class"));
-                    if (x === "active") {
-                        y = i;
-                        $("#" + y).hide(1);
-                        $("#" + i).attr("class", "");
-                        ++y;
-                        $("#" + y).show(1);
-                        $("#" + y).attr("class", "active");
-                        return;
-                    }   
-                }
-            });
-        });
-    </script>-->
-    <script>
-        function saw(x){
-            if(x==="correct"){
-                score();
-                $('#op').attr('disabled', 'disabled');
-            }
-            //alert(x);
-        }
-        function score(){
-            var x=$(".score").text();
-            ++x;
-            if(x<10)
-                x='0'+x;
-            $(".score").text(x);
-        }
-    </script>
-
+    <title>Color Game</title>
 </head>
-
 <body>
-    <button>+++</button>
-    <div id="1" class="active">
-        <div class="main">
-            <h1>What is your name</h1>
-            <button id="op"onclick="saw('correct');" style="background: red;color:black;">Harshit</button>
-            <button onclick="saw();">Navya</button>
-            <button onclick="saw();">Priyanshu</button>
-            <button onclick="saw();">Gracy</button>
-            <p id="demo"></p>
-        </div>
-        <div class="score">0</div>
-    </div>
-    <div id="2" class="" style="display:none;">jandnn</div>
-    <div id="3" class="" style="display:none;">jandn3</div>
-    <div id="4" class="" style="display:none;">jandn4</div>
-    <div id="5" class="" style="display:none;">jandn5</div>
-    <div id="6" class="" style="display:none;">jandn6</div>
-    <div id="7" class="" style="display:none;">jandn7</div>
+    
 </body>
-
 </html>
