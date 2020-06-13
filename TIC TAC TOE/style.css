@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    font-size: 30px;
+}
+
+table {
+    
+    width:45vw;
+    margin:25vh 27vw;
+    height:30vh;
+}
+
+tr:nth-child(odd) {
+    background: gray;
+}
+
+button {
+    font-size: 50px;
+    background: darkgray;
+    width:15vw;
+    height: 10vh;
+    padding: 1vh 2vw;
+}
