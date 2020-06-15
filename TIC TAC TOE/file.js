@@ -11,7 +11,7 @@ else {
 function win() {
     if ((($('#a').text() === value) && ($('#b').text() === value) && ($('#c').text() === value)) || (($('#d').text() === value) && ($('#e').text() === value) && ($('#f').text() === value)) || (($('#g').text() === value) && ($('#h').text() === value) && ($('#i').text() === value))) //horizontal win
     {
-        $(".result").show(5000);
+        $(".result").fadeIn(3000);
         $("#res_ult").text("Player "+player+" Wins");
         $("#res").text("Play Again");
         $("button").attr("disabled","true"); document.getElementById("res").disabled = false;        
@@ -19,7 +19,7 @@ function win() {
     }
     if ((($('#a').text() === value) && ($('#d').text() === value) && ($('#g').text() === value)) || (($('#b').text() === value) && ($('#e').text() === value) && ($('#h').text() === value)) || (($('#c').text() === value) && ($('#f').text() === value) && ($('#i').text() === value))) //vertical win
     {
-        $(".result").show(3000);
+        $(".result").fadeIn(3000);
         $("#res_ult").text("Player "+player+" Wins");
         $("#res").text("Play Again");
         $("button").attr("disabled","true"); document.getElementById("res").disabled = false;        
@@ -27,7 +27,7 @@ function win() {
     }
     if ((($('#a').text() === value) && ($('#e').text() === value) && ($('#i').text() === value)) || (($('#c').text() === value) && ($('#e').text() === value) && ($('#g').text() === value))) //diagonal win
     {
-        $(".result").show(3000);
+        $(".result").fadeIn(3000);
         $("#res_ult").text("Player "+player+" Wins");
         $("#res").text("Play Again");
         $("button").attr("disabled","true"); document.getElementById("res").disabled = false;        
@@ -81,7 +81,7 @@ $(document).ready(function () {
     $(".done").attr("class", "");
     //$("button").attr("disabled","false");
     $('button').prop('disabled', false);
-    $(".result").hide(2000);
+    $(".result").fadeOut(2000);
         ct=0;
     $(this).text("");
     });
