@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Color Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            position: relative;
+        }
+
+        .s {
+            background: red;
+            width: 30%;
+            margin: 1%;
+            float: left;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".s").click(function() {
+                //alert(random());
+                array(6);
+                //var i=3; 
+                for (var i = 0; i < 6; i++) {
+                    var b = String.fromCharCode(97 + i);
+                    ("#" + b).hide();
+                }
+                //$("#a").hide();
+
+                alert(9);
+            });
+        });
+        //function color{
+        //return 0;
+        //}
+        function array(num) {
+            var arr = [];
+            for (var i = 0; i < num; i++) {
+                arr[i] = random();
+                alert(arr[i]);
+            }
+        }
+
+        function random() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        }
+    </script>
 </head>
+
 <body>
-    
+    <div class="head">
+        <h2>Color Game</h2>
+        <p class="rgb"></p>
+        <p class="hex"></p>
+    </div>
+    <div class="square">
+        <div class="s" id="a">
+        </div>
+        <div class="s" id="b">
+        </div>
+        <div class="s" id="c">
+
+        </div>
+        <div class="s" id="d">
+
+        </div>
+        <div class="s" id="e">
+
+        </div>
+        <div class="s" id="f">
+
+        </div>
+    </div>
 </body>
+
 </html>
