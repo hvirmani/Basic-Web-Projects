@@ -10,18 +10,27 @@
  $(document).ready(function () {
      $("#easy").click(function () {
          num = 3;
-         $(".a2").fadeOut(3000);
-         $(".a3").fadeOut(3000);
+         $(".a2").fadeOut(2500);
+         $(".a3").fadeOut(2000);
+         $(".result").text("");
+         $("button").attr("class"," ");
+         $(this).attr("class","active");
      });
      $("#medium").click(function () {
          num = 6;
          $(".a2").fadeIn(3000);
          $(".a3").fadeOut(3000);
+         $(".result").text("");
+         $("button").attr("class"," ");
+         $(this).attr("class","active");
      });
      $("#hard").click(function () {
          num = 9;
-         $(".a2").fadeIn(3000);
+         $(".a2").fadeIn(2500);
          $(".a3").fadeIn(3000);
+         $(".result").text("");
+         $("button").attr("class"," ");
+         $(this).attr("class","active");
      });
      $("button").click(function () {
          for (var i = 0; i < num; i++) {
@@ -31,12 +40,12 @@
          array();
      });
      $(".s").click(function () {
-         var txt = $(".rgb").text();
+         var txt = $(".rgb").text().split(":")[1];
          if ($(this).css("background-color") === txt) {
              $(".s").css("background", txt);
              $(".result").text("Good Job");
          } else {
-             $(this).css("background", "inherit");
+             $(this).css("background", "linear-gradient(315deg, #ffac81 0%, #ff928b 74%)");
              $(".result").text("Try Again");
          }
 
@@ -49,7 +58,7 @@
          arr[i] = $("#" + b).css("background-color");
      }
      var color_num = Math.floor(Math.random() * num);
-     $(".rgb").text("RGB Code: "+arr[color_num]);
+     $(".rgb").text("RGB Code:"+arr[color_num]);
      $(".hex").text("Hex Code: "+change(arr[color_num]));
  }
 
