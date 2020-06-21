@@ -33,13 +33,14 @@ body {
     margin-top: 2vh;
     animation: fade 6s;
     animation: co_lor infinite 10s;
+    transition: 0.5s;
 }
 @keyframes co_lor{
     0% {
         color:#000;
     }
 
-    50% {
+    80% {
         color:#c7c585;
     }
     100% {
@@ -66,9 +67,16 @@ button {
     background: linear-gradient(90deg, #b7f8db 0%, #50a7c2 100%);
     border-radius: 10px;
     font-size: 18px;
+    transition: 0.9s;
     font-family: Segoe Script;
 }
-
+button:hover{
+    color:#50a7c2;
+    background:#2d3436;
+    font-weight: 800;
+    border:1px solid white;
+    animation: fade 0.5s;
+}
 .line {
     text-align: justify;
     height: 20vh;
