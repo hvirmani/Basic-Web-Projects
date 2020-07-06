@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    outline: none;
 }
 
 body {
@@ -28,24 +29,11 @@ body {
 }
 
 .head {
-    font-size: 40px;
-    font-family: Segoe Print;
+    font-size: 50px;
+    font-family: Montserrat;
     margin-top: 2vh;
     animation: fade 6s;
-    animation: co_lor infinite 10s;
     transition: 0.5s;
-}
-@keyframes co_lor{
-    0% {
-        color:#000;
-    }
-
-    80% {
-        color:#c7c585;
-    }
-    100% {
-        color:#000;
-    }
 }
 @keyframes fade {
     0% {
@@ -93,7 +81,7 @@ button:hover{
 }
 
 .foot {
-    margin-top: 2vh;
+    margin-top: 5vh;
     font-family: Segoe Print;
     font-size: 20px;
     font-weight: 1000;
