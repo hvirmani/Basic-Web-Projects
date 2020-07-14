@@ -11,7 +11,7 @@
 
 <body>
 	<div class="head">
-		Budget App
+		<h1>Budget App</h1>
 	</div>
 	<div class="main">
 		<div class="income">
@@ -23,14 +23,17 @@
 				<div class="icons">
 					<h1>Budget</h1>
 					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
+					<div id="income_txt"></div>
 				</div>
 				<div class="icons">
 					<h1>Expense</h1>
 					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
+					<p id="expense_txt">0</p>
 				</div>
 				<div class="icons">
 					<h1>Balance</h1>
 					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
+					<p id="balance_txt">0</p>
 				</div>
 			</div>
 		</div>
@@ -62,7 +65,7 @@
 				<input type="number" id="wish_amount" required>
 				<button type="submit" id="wish">Add to wishlist</button>
 			</form>
-			<table id="expense_list">
+			<table id="wish_list">
 				<tr>
 					<td id="title">
 						<h2>Item</h2>
