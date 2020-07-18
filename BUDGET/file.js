@@ -4,6 +4,7 @@
 //var balance=0;
 $(document).ready(function(){
   $("#inc").click(function(){
+	  $("#jkl").text("hioj");
 	  var income=$("#income").val();
 	  var balance=$("#balance_txt").text();
 	  balance=balance+income;
