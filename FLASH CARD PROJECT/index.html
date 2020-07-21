@@ -1,43 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Flash Card</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<style>
-		.main{
-			display: flex;
+		body {
+			background: rgb(235, 235, 235);
+			font-family: 'poppins';
+			font-size: 20px;
 		}
-		.card{
-			width: 300px;
+		.head{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+		.card {
+			width: 30vw;
+			height:40vh;
+			max-height: 350px;
+			max-width: 350px;
+			margin: 20px;
+			padding: 20px;
+			box-shadow: 5px 5px 10px #333;
+			background-color: white;
+			border-radius: 5px;
+			position: relative;
+			perspective: 1000px;
+		}
+        
+		.inner {
+			width: 100%;
+			height: 100%;
+			transition: transform 3s;
+			transform-style: preserve-3d;
+		}
+
+		.card:hover .inner {
+			transform: rotateY(180deg);
+		}
+
+		.back {
+			transform: rotateY(180deg);
+		}
+
+		.front,
+		.back {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			backface-visibility: hidden;
+		}
+
+		.main {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.card {
+			border: 1px solid black;
+		}
+
+		#goal {
+			border-top: 3px solid cyan;
+		}
+
+		#dharma {
+			border-top: 3px solid red;
+		}
+
+		#karma {
+			border-top: 3px solid yellow;
+		}
+
+		#role {
+			border-top: 3px solid blue;
 		}
 	</style>
 </head>
+
 <body>
+	<div class="head">
+		<h1>Four Principles Of Life</h1>
+	</div>
 	<div class="main">
-		<div id="team" class="card">
-			<h2>Reliable, efficient delivery</h2>
-        <h2>Powered by Technology</h2>
-        <br>
-        <p>Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
+		<div id="goal" class="card">
+			<div class="inner">
+				<div class="front">
+					<h4>Goal</h4>
+					<p>Monitors activity to identify project roadblocks</p>
+					<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+				</div>
+				<div class="back">
+					<p>Goals Give You Focus
+						Without a goal, your efforts can become disjointed and often confusing.Being able to measure progress is extremely rewarding and will help you maintain focus, keep your head held high and your energy up. It will also keep you from getting down.</p>
+				</div>
+			</div>
 		</div>
-		<div id="karma" class="card">
-			<h2>Reliable, efficient delivery</h2>
-        <h2>Powered by Technology</h2>
-        <br>
-        <p>Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
+		<div>
+			<div id="dharma" class="card">
+				<div class="inner">
+					<div class="front">
+						<h4>Dharma</h4>
+						<p>Monitors activity to identify project roadblocks</p>
+						<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+					</div>
+					<div class="back">
+						<p> Dharma is the power that maintains society, it makes the grass grow, the sun shine, and makes us moral people or rather gives humans the opportunity to act virtuously.Dharma is known to be the everlasting directing force which has directed the original human passage on Earth. </p>
+					</div>
+				</div>
+			</div>
+			<div id="karma" class="card">
+				<div class="inner">
+					<div class="front">
+						<h4>Karma</h4>
+						<p>Result of a person's actions as well as the actions themselves</p>
+						<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+					</div>
+					<div class="back">
+						<p>Karma is the intentions you had, behind all your past actions and current ones. Example: You may have did something good for someone in the past, with the intention in your mind that from that action, that person will now owe you something in the future that you can collect off of.</p>
+					</div>
+				</div>
+			</div>
+
 		</div>
-		<div id="superviser" class="card">
-			<h2>Reliable, efficient delivery</h2>
-        <h2>Powered by Technology</h2>
-        <br>
-        <p>Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
+		<div id="role" class="card">
+			<div class="inner">
+				<div class="front">
+					<h4>Role</h4>
+					<p>Role is the act of imitating the character and behavior</p>
+					<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+				</div>
+				<div class="back">
+					<p>Being responsible means doing things which are not only beneficial to us but also to the society. Responsibilities can't be taught, it's something that we learn and decide by ourselves. Our ethics play a major role. Every person has a different set of rules based on which they prioritize their actions.</p>
+				</div>
+			</div>
 		</div>
-		<div id="calculator" class="card">
-			<h2>Reliable, efficient delivery</h2>
-        <h2>Powered by Technology</h2>
-        <br>
-        <p>Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
-		</div>
+
 	</div>
 </body>
+
 </html>
