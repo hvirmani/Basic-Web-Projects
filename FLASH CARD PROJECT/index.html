@@ -5,80 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Flash Card</title>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-	<style>
-		body {
-			background: rgb(235, 235, 235);
-			font-family: 'poppins';
-			font-size: 20px;
-		}
-		.head{
-			display: flex;
-			flex-direction: column;
-			text-align: center;
-		}
-		.card {
-			width: 30vw;
-			height:40vh;
-			max-height: 350px;
-			max-width: 350px;
-			margin: 20px;
-			padding: 20px;
-			box-shadow: 5px 5px 10px #333;
-			background-color: white;
-			border-radius: 5px;
-			position: relative;
-			perspective: 1000px;
-		}
-        
-		.inner {
-			width: 100%;
-			height: 100%;
-			transition: transform 3s;
-			transform-style: preserve-3d;
-		}
-
-		.card:hover .inner {
-			transform: rotateY(180deg);
-		}
-
-		.back {
-			transform: rotateY(180deg);
-		}
-
-		.front,
-		.back {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			backface-visibility: hidden;
-		}
-
-		.main {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.card {
-			border: 1px solid black;
-		}
-
-		#goal {
-			border-top: 3px solid cyan;
-		}
-
-		#dharma {
-			border-top: 3px solid red;
-		}
-
-		#karma {
-			border-top: 3px solid yellow;
-		}
-
-		#role {
-			border-top: 3px solid blue;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -91,7 +18,7 @@
 				<div class="front">
 					<h4>Goal</h4>
 					<p>Monitors activity to identify project roadblocks</p>
-					<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+					<img src="images/icon-goal.png" alt="goal" class="icon" height="80" width="80">
 				</div>
 				<div class="back">
 					<p>Goals Give You Focus
@@ -105,7 +32,7 @@
 					<div class="front">
 						<h4>Dharma</h4>
 						<p>Monitors activity to identify project roadblocks</p>
-						<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+						<img src="images/icon-dharma.svg" alt="dharma" class="icon" height="80" width="80">
 					</div>
 					<div class="back">
 						<p> Dharma is the power that maintains society, it makes the grass grow, the sun shine, and makes us moral people or rather gives humans the opportunity to act virtuously.Dharma is known to be the everlasting directing force which has directed the original human passage on Earth. </p>
@@ -117,7 +44,7 @@
 					<div class="front">
 						<h4>Karma</h4>
 						<p>Result of a person's actions as well as the actions themselves</p>
-						<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+						<img src="./images/icon-karma.svg" alt="karma" class="icon" height="80" width="80">
 					</div>
 					<div class="back">
 						<p>Karma is the intentions you had, behind all your past actions and current ones. Example: You may have did something good for someone in the past, with the intention in your mind that from that action, that person will now owe you something in the future that you can collect off of.</p>
@@ -131,7 +58,7 @@
 				<div class="front">
 					<h4>Role</h4>
 					<p>Role is the act of imitating the character and behavior</p>
-					<img src="./images/icon-supervisor.svg" alt="supervisor" class="icon">
+					<img src="./images/icon-role.svg" alt="role" class="icon" height="80" width="80">
 				</div>
 				<div class="back">
 					<p>Being responsible means doing things which are not only beneficial to us but also to the society. Responsibilities can't be taught, it's something that we learn and decide by ourselves. Our ethics play a major role. Every person has a different set of rules based on which they prioritize their actions.</p>
