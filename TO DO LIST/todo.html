@@ -1,39 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>To Do List</title>
+    <title>To Do</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-
 <body>
-    <div class="main">
-        <div class="head">To Do List</div>
-        <div class="todo">
-
-            <input id="ip" type="text" placeholder="Enter your input" style="display: none;">
-            <ul id="active">
-                <li class="active">Buy Vegeables</li>
-                <li class="active">Do Coding</li>
-                <li class="active">Make a Project</li>
-                <li class="active">Watch new web series</li>
-                <li class="active">Visit to our farms</li>
-            </ul>
-            <ul id="completed" style="display: none;">
-                <li class="completed">Do Exercise</li>
-                <li class="completed">Do Exercise</li>
-                <li class="completed">Do Exercise</li>
-                <li class="completed">Do Exercise</li>
-                <li class="completed">Do Exercise</li>
-            </ul>
-            <input type="button" value="+" onclick="appear();">
-            <input type="button" value="^" onclick="see();">
-            
-        </div>
-    </div>
-
-    <script src="todo.js"></script>
+   <div class="input">
+       <input id="text" type="text">
+       <input type="button" value="+" onclick="newTask();">
+   </div>
+   <ul id="activated">
+       <li>Go to gym</li>
+       <li>Eat lunch</li>
+       <li>Go to market</li>
+       <li>Enjoy ur day</li>
+       <li>et</li>
+   </ul>
+   <ul id="done">
+   </ul>
+    <script>
+		var list=document.getElementsByTagName("li");
+		for(i=0;i<list.length;i++){
+			list[i].className="active";
+			var span1=document.createElement("span");
+			var icon1=document.createElement("i");
+		    icon1.className="fas fa-trash-alt";
+			span1.appendChild(icon1);
+			span1.className="close";
+			//var close_icon=document.createTextNode("\u00D7");
+			//span.appendChild(close_icon);
+			list[i].appendChild(span1);
+			var span2=document.createElement("span");
+			var icon2=document.createElement("i");
+			icon2.className="fa fa-check";
+			span2.appendChild(icon2);
+			span2.className="done";
+			list[i].appendChild(span2);
+		}
+		var close=document.getElementsByClassName("close");
+		var done=document.getElementsByClassName("done");
+		for(i=0;i<close.length;i++){
+			close[i].onclick=function(){
+				var parent=this.parentElement;
+				parent.style.display="none";
+			}
+		}
+		for(i=0;i<done.length;i++){
+				done[i].onclick=function(){
+					var parent=this.parentElement;
+					if(parent.className=="active"){
+						document.getElementById("done").append(parent);
+						parent.className="done";
+					}
+					
+					else{
+						document.getElementById("activated").append(parent);
+						parent.className="active";
+					}
+					console.log(parent);
+					//parent.classList.toggle("done");
+				}
+			}
+		function newTask(){
+        var element=document.createElement("li");
+		var input=document.getElementById("text").value;
+		var node=document.createTextNode(input);
+		element.appendChild(node);
+		if(input===''){
+			alert("You must write something");
+		}
+		else{
+			document.getElementById('activated').appendChild(element);
+		}
+		document.getElementById('text').value="";
+		var span1 =document.createElement("span");
+		var icon1=document.createElement("i");
+		icon1.className="fas fa-trash-alt";
+		span1.appendChild(icon1);
+		span1.className="close";
+		element.appendChild(span1);
+		var span2=document.createElement("span");
+			var icon2=document.createElement("i");
+			icon2.className="fa fa-check";
+			span2.appendChild(icon2);
+			span2.className="done";
+		element.appendChild(span2);
+		for(i=0;i<close.length;i++){
+			close[i].onclick=function(){
+				var parent=this.parentElement;
+				parent.style.display="none";
+				//console.log(parent.textContent);
+			}
+		}
+			for(i=0;i<done.length;i++){
+				done[i].onclick=function(){
+					var parent=this.parentElement;
+					document.getElementById("done").appendChild(parent);
+						//parent.classList.toggle("done");
+					console.log(parent);
+				}
+			}
+		}
+    </script>
 </body>
-
 </html>
