@@ -3,96 +3,179 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Budget App</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="style.css">
-	<script src="file.js"></script>
+	<title>budget</title>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body>
-	<div class="head">
-		<h1>Budget App</h1>
-		<div class="jkl"></div>
+	<div class="input">
+		<input type="number" id="income">
+		<input type="button" value="+" onclick="addBalance();">
 	</div>
-	<div class="main">
-		<div class="income">
-			<form>
-				<input type="number" id="income" required>
-				<button type="submit" id="inc">Calculate</button>
-			</form>
-			<div class="list">
-				<div class="icons">
-					<h1>Budget</h1>
-					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
-					<div id="income_txt"></div>
-				</div>
-				<div class="icons">
-					<h1>Expense</h1>
-					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
-					<p id="expense_txt">0</p>
-				</div>
-				<div class="icons">
-					<h1>Balance</h1>
-					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
-					<p id="balance_txt">0</p>
-				</div>
-			</div>
-		</div>
-		<div class="expense">
-			<form>
-				<input type="text" id="expense_text" required>
-				<input type="number" id="expense_amount" required>
-				<button type="submit" id="expense">Add Expense</button>
-			</form>
-			<table id="expense_list">
-				<tr>
-					<td id="title">
-						<h2>Item</h2>
-					</td>
-					<td id="title">
-						<h2>Amount</h2>
-					</td>
-				</tr>
-
-				<tr>
-					<td id="msg">Vegetable</td>
-					<td id="amt">50</td>
-				</tr>
-			</table>
-		</div>
-		<div class="wish">
-			<form>
-				<input type="text" id="wish_text" required>
-				<input type="number" id="wish_amount" required>
-				<button type="submit" id="wish">Add to wishlist</button>
-			</form>
-			<table id="wish_list">
-				<tr>
-					<td id="title">
-						<h2>Item</h2>
-					</td>
-					<td id="title">
-						<h2>Amount</h2>
-					</td>
-				</tr>
-
-				<tr>
-					<td id="msg">Vegetable</td>
-					<td id="amt">50</td>
-				</tr>
-			</table>
-			<!--<div class="list">
-				<div class="icons">
-					<h1>Expense Title</h1>
-					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
-				</div>
-				<div class="icons">
-					<h1>Expense Value</h1>
-					<span class="icon"><i class="fas fa-money-bill-alt"></i></span>
-				</div>
-			</div>-->
-		</div>
+	<div class="expense">
+		<input type="text" id="expense_text">
+		<input type="number" id="expense_amount">
+		<input type="button" value="-" onclick="addExpense();">
 	</div>
+	<div class="wishlist">
+		<input type="text" id="wish_text">
+		<input type="number" id="wish_amount">
+		<input type="button" value="*" onclick="addWishlist();">
+	</div>
+	<ul id="expense_list" class="a">
+		<li><span>Expense Title</span><span>Expense Amount</span></li>
+		<li>gym2</li>
+	</ul>
+	<ul id="wish_list" class="b">
+		<li>gym3</li>
+		<li>gym4</li>
+	</ul>
+	<h1 id="balance">0</h1>
+	<h1 id="expense_balance">0</h1>
+	<script>
+		var balance = 0;
+		var amount, txt, checkBalance,expense=0;
+		var expense_balance=document.getElementById("expense_balance");
+		var close = document.getElementsByClassName("close");
+		var edit = document.getElementsByClassName("edit");
+        var account_balance=document.getElementById("balance");
+		function addBalance() {
+
+			amount = document.getElementById("income");
+			if (amount.value == '') {
+				return 0;
+			}
+			balance += parseInt(amount.value);
+			account_balance.innerHTML=balance;
+			amount.value = "";
+		}
+
+		function addExpense() {
+			amount = document.getElementById("expense_amount");
+			txt = document.getElementById("expense_text");
+			if (amount.value == '' || txt.value == '') {
+				amount.value = '';
+				txt.value = '';
+				return 0;
+			}
+			var element = document.createElement("li");
+			var node1 = document.createElement("span");
+			var node2 = document.createElement("span");
+			var text_1 = document.createTextNode(txt.value);
+			var text_2 = document.createTextNode(amount.value);
+			node1.appendChild(text_1);
+			node2.appendChild(text_2);
+			node2.className = "amt";
+			element.appendChild(node1);
+			element.appendChild(node2);
+			checkBalance = balance - amount.value;
+			if (checkBalance < 0) {
+				document.getElementById("wish_list").appendChild(element);
+			} 
+			else {
+				balance = checkBalance;
+				account_balance.innerHTML=balance;
+				expense+=parseInt(amount.value);
+				expense_balance.innerHTML=expense;
+				document.getElementById("expense_list").appendChild(element);
+			}
+
+			var span1 = document.createElement("span");
+			var icon1 = document.createElement("i");
+			icon1.className = "fas fa-edit";
+			span1.appendChild(icon1);
+			span1.className = "edit";
+			element.appendChild(span1);
+			var span2 = document.createElement("span");
+			var icon2 = document.createElement("i");
+			icon2.className = "fas fa-trash-alt";
+			span2.appendChild(icon2);
+			span2.className = "close";
+			element.appendChild(span2);
+
+			amount.value = '';
+			txt.value = '';
+			for (i = 0; i < close.length; i++) {
+				close[i].onclick = function() {
+                    var add=parseInt(parent.childNodes[1].textContent);
+					var parent = this.parentElement;
+					parent.style.display = "none";
+					if (parent.parentElement.className == 'a')
+						balance += add;
+					account_balance.innerHTML=balance;
+					expense-=add;
+					expense_balance.innerHTML=expense;
+					console.log(balance);
+				}
+			}
+			for (i = 0; i < edit.length; i++) {
+				edit[i].onclick = function() {
+					var parent = this.parentElement;
+					var a = parent.childNodes[0].textContent;
+					var b = parseInt(parent.childNodes[1].textContent);
+					txt.value = a;
+					amount.value = b;
+					if (parent.parentElement.className == 'a')
+						balance += parseInt(parent.childNodes[1].textContent);
+					account_balance.innerHTML=balance;
+					parent.style.display = "none";
+
+				}
+			}
+		}
+
+		function addWishlist() {
+			amount = document.getElementById("wish_amount");
+			txt = document.getElementById("wish_text");
+			if (amount.value == '' || txt.value == '') {
+				amount.value = '';
+				txt.value = '';
+				return 0;
+			}
+			var element = document.createElement("li");
+			var node1 = document.createElement("span");
+			var node2 = document.createElement("span");
+			var text_1 = document.createTextNode(txt.value);
+			var text_2 = document.createTextNode(amount.value);
+			node1.appendChild(text_1);
+			node2.appendChild(text_2);
+			element.appendChild(node1);
+			element.appendChild(node2);
+			document.getElementById("wish_list").appendChild(element);
+			var span1 = document.createElement("span");
+			var icon1 = document.createElement("i");
+			icon1.className = "fas fa-edit";
+			span1.appendChild(icon1);
+			span1.className = "edit";
+			element.appendChild(span1);
+			var span2 = document.createElement("span");
+			var icon2 = document.createElement("i");
+			icon2.className = "fas fa-trash-alt";
+			span2.appendChild(icon2);
+			span2.className = "close";
+			element.appendChild(span2);
+			amount.value = '';
+			txt.value = '';
+			for (i = 0; i < close.length; i++) {
+				close[i].onclick = function() {
+
+					var parent = this.parentElement;
+					parent.style.display = "none";
+				}
+			}
+			for (i = 0; i < edit.length; i++) {
+				edit[i].onclick = function() {
+					var parent = this.parentElement;
+					var a = parent.childNodes[0].textContent;
+					var b = parseInt(parent.childNodes[1].textContent);
+					txt.value = a;
+					amount.value = b;
+					parent.style.display = "none";
+				}
+
+			}
+		}
+	</script>
 </body>
 
 </html>
