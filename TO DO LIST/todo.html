@@ -10,60 +10,19 @@
        <input id="text" type="text">
        <input type="button" value="+" onclick="newTask();">
    </div>
-   <ul id="activated">
-       <li>Go to gym</li>
-       <li>Eat lunch</li>
-       <li>Go to market</li>
-       <li>Enjoy ur day</li>
-       <li>et</li>
+   <ul id="active">
+       
    </ul>
    <ul id="done">
    </ul>
     <script>
-		var list=document.getElementsByTagName("li");
-		for(i=0;i<list.length;i++){
-			list[i].className="active";
-			var span1=document.createElement("span");
-			var icon1=document.createElement("i");
-		    icon1.className="fas fa-trash-alt";
-			span1.appendChild(icon1);
-			span1.className="close";
-			//var close_icon=document.createTextNode("\u00D7");
-			//span.appendChild(close_icon);
-			list[i].appendChild(span1);
-			var span2=document.createElement("span");
-			var icon2=document.createElement("i");
-			icon2.className="fa fa-check";
-			span2.appendChild(icon2);
-			span2.className="done";
-			list[i].appendChild(span2);
-		}
+		
 		var close=document.getElementsByClassName("close");
-		var done=document.getElementsByClassName("done");
-		for(i=0;i<close.length;i++){
-			close[i].onclick=function(){
-				var parent=this.parentElement;
-				parent.style.display="none";
-			}
-		}
-		for(i=0;i<done.length;i++){
-				done[i].onclick=function(){
-					var parent=this.parentElement;
-					if(parent.className=="active"){
-						document.getElementById("done").append(parent);
-						parent.className="done";
-					}
-					
-					else{
-						document.getElementById("activated").append(parent);
-						parent.className="active";
-					}
-					console.log(parent);
-					//parent.classList.toggle("done");
-				}
-			}
+		var check=document.getElementsByClassName("check");
+		
 		function newTask(){
         var element=document.createElement("li");
+			element.className="active";
 		var input=document.getElementById("text").value;
 		var node=document.createTextNode(input);
 		element.appendChild(node);
@@ -71,7 +30,7 @@
 			alert("You must write something");
 		}
 		else{
-			document.getElementById('activated').appendChild(element);
+			document.getElementById('active').appendChild(element);
 		}
 		document.getElementById('text').value="";
 		var span1 =document.createElement("span");
@@ -84,21 +43,28 @@
 			var icon2=document.createElement("i");
 			icon2.className="fa fa-check";
 			span2.appendChild(icon2);
-			span2.className="done";
+			span2.className="check";
 		element.appendChild(span2);
 		for(i=0;i<close.length;i++){
 			close[i].onclick=function(){
 				var parent=this.parentElement;
 				parent.style.display="none";
-				//console.log(parent.textContent);
 			}
 		}
-			for(i=0;i<done.length;i++){
-				done[i].onclick=function(){
+			for(i=0;i<check.length;i++){
+				check[i].onclick=function(){
 					var parent=this.parentElement;
-					document.getElementById("done").appendChild(parent);
-						//parent.classList.toggle("done");
+					if(parent.className=="active"){
+						document.getElementById("done").appendChild(parent);
+						parent.className="done";
+					}
+					
+					else{
+						document.getElementById("active").appendChild(parent);
+						parent.className="active";
+					}
 					console.log(parent);
+					//parent.classList.toggle("done");
 				}
 			}
 		}
