@@ -1,10 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 	<meta charset="UTF-8">
-	<title>Random Jokes</title>
+	<title>Document</title>
 </head>
-<body>
-	
+
+<body onload="newJoke();">
+<h1>Jokes</h1>
+<button onclick="newJoke();" >Next</button>
+	<script>
+		function newJoke(){
+			const url="https://api.icndb.com/jokes/random";
+			fetch(url)
+			.then((res)=>{
+				return res.json();
+			})
+			.then((data)=>{
+				console.log(data.value.joke);
+			})
+		}
+	</script>
 </body>
+
 </html>
