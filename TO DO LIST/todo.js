@@ -1,73 +1,50 @@
-//Put a cross button on evry item in a list
-var arr = document.getElementsByClassName("active");
-for (var i = 0; i < arr.length; i++) {
-    var span = document.createElement('span');
-    var txt = document.createTextNode('X');
-    span.className = "close";
-    span.appendChild(txt);
-    arr[i].appendChild(span);
-}
-//Function of close button
 var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        var div = this.parentElement;
-        var complete = document.createElement('done');
-        var txt = div.firstChild;
-        complete.appendChild(txt);
-        document.getElementById('completed').appendChild(complete);
-        div.style.display = "none";
-    }
-}
+var check = document.getElementsByClassName("check");
+var k = 0;
 
-function appear() {
-    if (document.getElementById('ip').style.display === "none") {
-        document.getElementById('ip').style.display = "block";
-    } else {
-        newElement();
-    }
-}
+function newTask() {
+	var input = document.getElementById("text").value;
+	var txt = document.createTextNode(input);
+	//console.log(txt);
+	var li = document.createElement("li");
+	li.className = "active";
+	var element = `<span class="data"></span><span class="check"><i class="fa fa-check" ></i></span><span class="close"><i class="fas fa-trash-alt" ></i></span>`;
+	var a = document.getElementsByClassName("data");
 
-function see() {
-    if (document.getElementById('active').style.display === "none") {
-        document.getElementById('active').style.display = "block";
-        document.getElementById('completed').style.display = "none"
-    } else {
-        {
-            document.getElementById('active').style.display = "none";
-            document.getElementById('completed').style.display = "block"
-        }
-    }
+	li.innerHTML = element;
+	if (input === '') {
+		alert("You must write something");
+	} else {
+		document.getElementById('active').appendChild(li);
+		//document.getElementById("data").appendChild(txt);
+	}
+	a[k].appendChild(txt);
+	k++;
+	//console.log(a[0].innerHTML);
+	document.getElementById('text').value = "";
+	for (i = 0; i < close.length; i++) {
+		close[i].onclick = function () {
+			var parent = this.parentElement;
+			parent.style.display = "none";
+			parent.parentElement.removeChild(parent);
+		}
+	}
+	for (i = 0; i < check.length; i++) {
+		check[i].onclick = function () {
+			var parent = this.parentElement;
+			if (parent.className == "active") {
+				document.getElementById("done").appendChild(parent);
+				parent.className = "done";
+			} else {
+				document.getElementById("active").appendChild(parent);
+				parent.className = "active";
+			}
+		}
+	}
 }
-
-function newElement() {
-    var element = document.createElement('li');
-    var value = document.getElementById('ip').value;
-    var txt = document.createTextNode(value);
-    element.appendChild(txt);
-    if (value === '') {
-        alert('You must write something');
-    } else {
-        var x = document.getElementById('active');
-        x.appendChild(element);
-    }
-    document.getElementById('ip').value = "";
-
-    var span = document.createElement('span');
-    var txt = document.createTextNode('X');
-    span.className = "close";
-    span.appendChild(txt);
-    element.appendChild(span);
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            var complete = document.createElement('done');
-            var txt = div.firstChild;
-            complete.appendChild(txt);
-            document.getElementById('completed').appendChild(complete);
-            div.style.display = "none";
-            div.style.display = "none";
-        }
-    }
-}
+const ul_1 = document.querySelector('#active')
+const ul_2 = document.querySelector("#done");
+if (ul_1.children.length === 0)
+	ul_1.innerHTML = '';
+if (ul_2.children.length === 0)
+	ul_2.innerHTML = '';

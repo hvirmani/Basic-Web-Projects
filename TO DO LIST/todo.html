@@ -3,132 +3,33 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>To Do</title>
-	
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		body{
-			text-align: left;
-			margin: 0;
-			padding: 0;
-			font-size: 28px;
-			outline: none;
-		}
-		#text{
-			width:50vw;
-			height: 5vh;
-			border-radius: 20px;
-		}
-		#btn{
-			width: 50px;
-			height: 50px;
-			border-radius: 100%;
-			margin-left: -50px;
-		}
-		#active:empty:after{
-			content: "You have nothing to do!";
-		}
-		#done:empty:after {
-    content: "You have yet to do any task!";
-}
-		
-		#main{
-			width: 100%;
-			text-align: center;
-			margin: auto;
-		}
-		hr{
-			text-align: center;
-			width: 20vw;
-			height: 2px;
-			background: gray;
-		}
-		#active li,#done li{
-			width: 50vw;
-			margin:2vw auto;
-			background:gray;
-		}
-		
-	</style>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<title>Todo</title>
+
 </head>
 
 <body>
-<div class="head">
-	<h1>Todo List</h1>
-</div>
-	<div class="col-md-12" id="main">
+	<div id="main">
 		<div id="input">
-			<input id="text" type="text">
+			<input type="text" id="text" maxlength="180" placeholder="Enter an activity...">
 			<input type="button" id="btn" value="+" onclick="newTask();">
 		</div>
-		<ul id="active">
-		</ul>
-		<hr>
-		<ul id="done">
-		</ul>
+		<!--<div id="img" style="display: none;">
+			<img src="wave.png" alt="" >
+		</div>-->
+		<div id="list">
+			<ul id="active">
+
+			</ul>
+			<hr>
+			<ul id="done">
+
+			</ul>
+		</div>
 	</div>
-
-	<script>
-		var close = document.getElementsByClassName("close");
-		var check = document.getElementsByClassName("check");
-
-		function newTask() {
-			var element = document.createElement("li");
-			element.className = "active";
-			var input = document.getElementById("text").value;
-			var node = document.createTextNode(input);
-			element.appendChild(node);
-			if (input === '') {
-				alert("You must write something");
-			} else {
-				document.getElementById('active').appendChild(element);
-			}
-			document.getElementById('text').value = "";
-			var span1 = document.createElement("span");
-			var icon1 = document.createElement("i");
-			icon1.className = "fas fa-trash-alt";
-			span1.appendChild(icon1);
-			span1.className = "close";
-			
-			var span2 = document.createElement("span");
-			var icon2 = document.createElement("i");
-			icon2.className = "fa fa-check";
-			span2.appendChild(icon2);
-			span2.className = "check";
-			element.appendChild(span2);
-			element.appendChild(span1);
-			for (i = 0; i < close.length; i++) {
-				close[i].onclick = function() {
-					var parent = this.parentElement;
-					parent.style.display = "none";
-				}
-			}
-			for (i = 0; i < check.length; i++) {
-				check[i].onclick = function() {
-					var parent = this.parentElement;
-					if (parent.className == "active") {
-						document.getElementById("done").appendChild(parent);
-						parent.className = "done";
-					} else {
-						document.getElementById("active").appendChild(parent);
-						parent.className = "active";
-					} //parent.classList.toggle("done");
-				}
-			}
-			console.log(ul_2.innerHTML);
-		}
-		const ul_1 = document.querySelector('#active')
-		const ul_2=document.querySelector("#done");
-		if (ul_1.children.length === 0)
-			ul_1.innerHTML = '';
-		if (ul_2.children.length === 0)
-			ul_2.innerHTML = '';
-		
-	</script>
+	<script src="todo.js"></script>
 </body>
 
 </html>
