@@ -6,11 +6,40 @@
 
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			text-align: center;
+			font-size: 30px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		#main{
+			width: 80vw;
+			max-width: 700px;
+			margin:30vh auto;
+		}
+		@media only screen and (min-width:1000px){
+			#main{
+				width:60vw;
+				margin-left: 40vw;
+				background: red;
+			}
+		}
+	</style>
 </head>
 
 <body onload="newJoke();">
-<h1>Jokes</h1>
-<button onclick="newJoke();" >Next</button>
+<div id="head">
+	<h1>Chuck Norris Jokes</h1>
+</div>
+<div id="img"></div>
+<div id="main">
+<button onclick="newJoke();" >Get a new One</button>
+<div id="joke">
+	
+</div>
+</div>
+
 	<script>
 		function newJoke(){
 			const url="https://api.icndb.com/jokes/random";
@@ -18,9 +47,15 @@
 			.then((res)=>{
 				return res.json();
 			})
+			/*.catch((error) => {
+  console.log("hhi")
+});*/
 			.then((data)=>{
 				console.log(data.value.joke);
+				var joke=data.value.joke;
+				document.getElementById("joke").innerHTML=joke;
 			})
+			
 		}
 	</script>
 </body>
