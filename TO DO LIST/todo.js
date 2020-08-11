@@ -27,6 +27,7 @@ function newTask() {
 			var parent = this.parentElement;
 			parent.style.display = "none";
 			parent.parentElement.removeChild(parent);
+			k--;
 		}
 	}
 	for (i = 0; i < check.length; i++) {
