@@ -1,0 +1,99 @@
+* {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.6s;
+	outline: none;
+	font-family: 'Montserrat';
+}
+
+body {
+	height: 100vh;
+}
+
+#main {
+	width: 60vw;
+	max-width: 800px;
+	min-height: 200px;
+	margin: auto;
+	float: right;
+	z-index: 9;
+}
+
+#img {
+	width: 35vw;
+	height: 40vh;
+	min-height: 200px;
+	min-width: 200px;
+	background-color: #dde1e7;
+	background: url(images/brain.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
+	position: absolute;
+	top: 20vh;
+	animation: hue 100s infinite;
+	transition: all 0.5s;
+	animation-delay: 2s;
+}
+
+#container {
+	margin: 22vh auto;
+	padding: 5px;
+	padding-right: 20px;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 25px 0;
+}
+
+#btn {
+	margin-bottom: 20px;
+	padding: 10px;
+	background: #444444;
+	border: none;
+	color: #fff;
+	font-size: 25px;
+}
+
+@media only screen and (max-width:900px) {
+	#img {
+		display: none;
+	}
+
+	#main {
+		width: 80vw;
+		margin: auto;
+		float: none;
+	}
+
+	#container {
+		margin: 15vh auto;
+	}
+
+	p {
+		font-size: 35px;
+	}
+}
+
+p {
+	font-size: 30px;
+	color: #454545;
+}
+
+#btn:hover {
+	background: blue;
+}
+
+@keyframes hue {
+	from {
+		filter: hue-rotate(0deg);
+	}
+
+	to {
+		filter: hue-rotate(360deg);
+	}
+}
