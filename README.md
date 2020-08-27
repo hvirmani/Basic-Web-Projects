@@ -1,12 +1,12 @@
-# Basc-Web-Projects
-- **TODO LIST** https://hvirmani.github.io/Basic-Web-Projects/TO%20DO%20LIST/todo.html
-- **Flash Card** https://hvirmani.github.io/Basic-Web-Projects/FLASH%20CARD%20PROJECT/index.html
-- **Tap Music** https://hvirmani.github.io/Basic-Web-Projects/MUSIC%20PLAYER/music.html
-- **Color Game** https://hvirmani.github.io/Basic-Web-Projects/COLOR%20GAME/color.html
-- **Chuck Norris Jokes** https://hvirmani.github.io/Basic-Web-Projects/CHUCK%20NORRIS%20JOKES/index.html
-- **Random Quote Generator** https://hvirmani.github.io/Basic-Web-Projects/RANDOM%20QUOTE%20GENERATOR/quote.html
-- **Drum Kit** https://hvirmani.github.io/Basic-Web-Projects/DRUM%20KIT/index.html
-- **Clock** https://hvirmani.github.io/Basic-Web-Projects/CLOCK/Clock.html
-- **Tic Tac Toe** https://hvirmani.github.io/Basic-Web-Projects/TIC%20TAC%20TOE/index.html
-- **Calculator** https://hvirmani.github.io/Basic-Web-Projects/CALCULATOR/Calculator.html
-- **Timer** https://hvirmani.github.io/Basic-Web-Projects/TIMER/timer.html
+## Basic-Web-Projects
+- [**TODO LIST**](https://hvirmani.github.io/Basic-Web-Projects/TO%20DO%20LIST/todo.html)
+- [**Flash Card**](https://hvirmani.github.io/Basic-Web-Projects/FLASH%20CARD%20PROJECT/index.html)
+- [**Tap Music**](https://hvirmani.github.io/Basic-Web-Projects/MUSIC%20PLAYER/music.html)
+- [**Chuck Norris Jokes**](https://hvirmani.github.io/Basic-Web-Projects/CHUCK%20NORRIS%20JOKES/index.html)
+- [**Color Game**](https://hvirmani.github.io/Basic-Web-Projects/COLOR%20GAME/color.html)
+- [**Random Quote Generator**](https://hvirmani.github.io/Basic-Web-Projects/RANDOM%20QUOTE%20GENERATOR/quote.html)
+- [**Drum Kit**](https://hvirmani.github.io/Basic-Web-Projects/DRUM%20KIT/index.html)
+- [**Clock**](https://hvirmani.github.io/Basic-Web-Projects/CLOCK/Clock.html)
+- [**Tic Tac Toe**](https://hvirmani.github.io/Basic-Web-Projects/TIC%20TAC%20TOE/index.html)
+- [**Calculator**](https://hvirmani.github.io/Basic-Web-Projects/CALCULATOR/Calculator.html)
+- [**Timer**](https://hvirmani.github.io/Basic-Web-Projects/TIMER/timer.html)
