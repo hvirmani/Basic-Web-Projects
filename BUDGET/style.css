@@ -1,1 +1,226 @@
-jrjS
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Montserrat;
+	font-size: 25px;
+	color: #444;
+	outline: none;
+	transition: all 0.6s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+main {
+	min-height: 100vh;
+}
+
+header {
+	min-height: 15vh;
+	box-shadow: 0px 0px 4px #000;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 10px;
+	align-items: center;
+}
+
+header h3 {
+	font-size: 45px;
+	margin: auto 10px;
+}
+
+header h3:after {
+	content: '$';
+}
+
+.amount_show {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+header input {
+	height: 50px;
+	padding: 5px 10px;
+}
+
+#income {
+	border-radius: 10px;
+	border: none;
+	background: #00000010;
+}
+
+header input[type=button] {
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	border: none;
+	position: relative;
+	left: -35px;
+	background: #3ba0fc;
+	color: #fff;
+	font-size: 25px;
+}
+
+#income:focus {
+	background: #fff;
+}
+
+#income:focus + #btn_1 {
+	background: #00000030;
+	color: #444;
+}
+
+@media (max-width:700px) {
+	header {
+		min-height: 20vh;
+		flex-direction: column;
+	}
+}
+
+.col-md-6 {
+	padding: 40px;
+}
+
+.col-md-12 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px auto;
+	padding: 20px 5px;
+}
+
+.expense {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: 20px;
+	padding-bottom: 50px;
+}
+
+.list {
+	position: relative;
+	width: 100%;
+	margin: 40px auto 20px;
+}
+
+.expense {
+	box-shadow: 0px 0px 4px #000;
+	border-radius: 5px;
+}
+
+.expense input {
+	width: 90%;
+	margin: 5px auto;
+	padding: 10px 15px;
+	border: none;
+}
+
+.expense input[type=button] {
+	position: absolute;
+	background: #3ba0fc;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	height: 50px;
+	width: 50px;
+	bottom: -20px;
+	right: -20px;
+	border-radius: 100%;
+	border: none;
+}
+
+ul {
+	width: 100%;
+}
+
+li {
+	list-style: none;
+	display: flex;
+	position: relative;
+	margin: auto;
+
+}
+
+p {
+	margin: auto 10px;
+}
+
+.data {
+	display: inline-block;
+	margin: auto;
+	color: #fff;
+	background: yellow;
+}
+
+.icon {
+	margin: auto;
+	color: #444;
+	background: yellow;
+}
+
+.icon span {
+	float: right;
+}
+
+.name {
+	width: calc(60% - 20px);
+}
+
+.amt {
+	width: 20%;
+}
+
+.edit,
+.close1 {
+	width: 10%;
+	max-width: 50px;
+	margin: auto 5px;
+}
+
+span {
+	padding: 5px 10px;
+}
+
+.delete i:hover {
+	color: #fc0133;
+}
+
+.edit i:hover {
+	color: #000;
+}
+
+ul {
+	text-align: center;
+}
+
+li {
+	text-align: left;
+}
+
+.a:empty:after {
+	content: 'You have\'nt buy anything!';
+	font-size: 30px;
+}
+
+.b:empty:after {
+	content: 'You have\'nt anything in your wishlist';
+	font-size: 30px;
+}
+
+.bal_1,
+.bal_2 {
+	text-align: center;
+}
+
+h4 {
+	font-size: 40px;
+	margin: 20px;
+}
