@@ -1,6 +1,7 @@
 ## Basic-Web-Projects
 - [**TODO LIST**](https://hvirmani.github.io/Basic-Web-Projects/TO%20DO%20LIST/todo.html)
 - [**Flash Card**](https://hvirmani.github.io/Basic-Web-Projects/FLASH%20CARD%20PROJECT/index.html)
+- [**BUDGET**](https://hvirmani.github.io/Basic-Web-Projects/BUDGET/budget.html)
 - [**Tap Music**](https://hvirmani.github.io/Basic-Web-Projects/MUSIC%20PLAYER/music.html)
 - [**Chuck Norris Jokes**](https://hvirmani.github.io/Basic-Web-Projects/CHUCK%20NORRIS%20JOKES/index.html)
 - [**Color Game**](https://hvirmani.github.io/Basic-Web-Projects/COLOR%20GAME/color.html)
