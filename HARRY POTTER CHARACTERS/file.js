@@ -1,5 +1,5 @@
 function newCharacter() {
-	const url = "http://hp-api.herokuapp.com/api/characters";
+	const url = "https://hp-api.herokuapp.com/api/characters";
 	fetch(url)
 		.then((res) => {
 			return res.json();
