@@ -11,3 +11,4 @@
 - [**Tic Tac Toe**](https://hvirmani.github.io/Basic-Web-Projects/TIC%20TAC%20TOE/index.html)
 - [**Calculator**](https://hvirmani.github.io/Basic-Web-Projects/CALCULATOR/Calculator.html)
 - [**Timer**](https://hvirmani.github.io/Basic-Web-Projects/TIMER/timer.html)
+- [**Harry Potter Characters**](https://hvirmani.github.io/Basic-Web-Projects/HARRY%20POTTER%20CHARACTERS/index.html)
