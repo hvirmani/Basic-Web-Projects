@@ -5,7 +5,6 @@ function newCharacter() {
 			return res.json();
 		})
 		.then((data) => {
-			console.log(data);
 			let i = Math.floor(Math.random() * 25);
 			let character = data[i].name;
 			let character_image = data[i].image;
